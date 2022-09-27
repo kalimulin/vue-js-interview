@@ -1,40 +1,27 @@
 <template>
-  <v-app>
-    <v-main>
-      <ContentBlock/>
-    </v-main>
-
-    <v-footer app v-bind="localAttrs">
-      <Footer />
-    </v-footer>
-  </v-app>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
 </template>
 
-<script>
-import ContentBlock from './components/ContentBlock';
-import Footer from './components/Footer';
+<script lang="ts">
+import { defineComponent } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
-export default {
-  name: 'App',
-
+export default defineComponent({
+  name: "App",
   components: {
-    ContentBlock,
-    Footer
+    HelloWorld,
   },
-
-  computed: {
-    localAttrs () {
-      const attrs = {}
-
-      attrs.absolute = true
-      attrs.fixed = false
-
-      return attrs
-    },
-  },
-
-  data: () => ({
-    //
-  }),
-};
+});
 </script>
+
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
